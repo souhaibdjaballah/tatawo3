@@ -8,4 +8,5 @@ public interface TaskService {
     Task fetchTask(String name);
 
     List<Task> fetchAll();
+    Task findTasksByAuthor(String author);
 }

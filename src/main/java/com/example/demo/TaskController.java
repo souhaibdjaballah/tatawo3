@@ -20,7 +20,7 @@ public class TaskController {
         return taskService.save(task);
     }
 
-    @GetMapping(path = "/task/{name}")
+    @GetMapping(path = "/task/name/{name}")
     public Task fetchTask(@PathVariable(name = "name") String name){
         return taskService.fetchTask(name);
     }
@@ -29,4 +29,10 @@ public class TaskController {
     public List<Task> fetchAll(){
         return taskService.fetchAll();
     }
+
+    @GetMapping(path = "/task/author/{author}")
+    public Task findTasksByAuthor(@PathVariable(name = "author") String author){return taskService.findTasksByAuthor(author);}
+
+//    @GetMapping(path = "/task")
+//    public Task findTasksByAuthor(@RequestParam(name = "author") String author){return taskService.findTasksByAuthor(author);}
 }

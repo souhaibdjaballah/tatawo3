@@ -25,4 +25,9 @@ public class TaskServiceImpl implements TaskService{
     public List<Task> fetchAll() {
         return taskRepo.findAll();
     }
+
+    @Override
+    public Task findTasksByAuthor(String author) {
+        return taskRepo.findByAuthor(author);
+    }
 }

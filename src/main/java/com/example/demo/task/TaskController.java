@@ -1,8 +1,6 @@
-package com.example.demo;
+package com.example.demo.task;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +14,6 @@ public class TaskController {
 
     @PostMapping(path = "/addTask")
     public Task addTask(@RequestBody Task task){
-
         return taskService.save(task);
     }
 

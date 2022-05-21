@@ -1,6 +1,5 @@
 package com.example.demo.appuser;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,7 +38,6 @@ public class AppUserDetails implements UserDetails {
     @Override
     public boolean isAccountNonLocked() {
         return !appUser.getLocked();
-//        return true;
     }
 
     @Override
@@ -50,6 +48,5 @@ public class AppUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return appUser.getEnabled();
-//        return true;
     }
 }

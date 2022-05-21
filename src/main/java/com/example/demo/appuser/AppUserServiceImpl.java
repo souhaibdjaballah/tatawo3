@@ -17,10 +17,13 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser appUser = appUserRepo.findByUsername(username);
+        AppUser appUser = appUserRepo.findByUsername(username); // username-first approach - then try email
+
+        if(appUser == null)
+            appUser = appUserRepo.findByEmail(username);
+
         return new AppUserDetails(appUser);
     }
 
